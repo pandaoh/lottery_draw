@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>抽奖机后台管理</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1/jquery-ui.min.css">
+  </head>
+  <body onkeydown="addKeyboard(event);">
+    <span class="hint-info"></span>
+    <h1 title="【F2】新增奖品，【F8】设置概率，【ESC】退出。">抽奖机后台管理</h1>
+    <header>
+      <div>
+        <button class="all-btn" onclick="selectAll();">『奖品列表』</button>
+        <button class="notall-btn" onclick="selectNotget();">『尚未领取』</button>
+      </div>
+      <div>
+        <button class="btn-warning" onclick="openResetdialog();">『重置奖池』</button>
+        <button class="add-btn" onclick="addPrize();" title="按【F2】快捷新增，【ESC】快捷关闭哦 ～ ">『新增奖品』</button>
+      </div>
+    </header>
+    <div class="prize-list">
+      <table>
+        <thead>
+          <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>建立时间</th>
+            <th>领取时间</th>
+            <th>修改</th>
+            <th>删除</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="6" class="not-get">正在从服务器请求数据......</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6" class="prize-num">正在获取奖品数目......</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="add-dialog">
+      <div class="warp-dialog">
+        <p>&nbsp;新增奖品<img src="img/no_icon.png" alt="关闭" title="关闭" onclick="closeDialog();"></p>
+        <div class="prize-add">
+          <img src="img/award_icon.png" alt="logo">
+          <form id="add-form" method="post" onsubmit="insertPrize();return false;">
+            <input type="text" name="prize-name" maxlength="30" placeholder="请输入奖品名称">
+            <input type="submit" value="新 增">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="update-dialog" title="修改奖品名称">
+      <form id="update-form" method="post" onsubmit="updatePrize();return false;">
+        <label>修改名称
+          <input type="text" name="newprize-name" maxlength="30" placeholder="请输入新的奖品名称">
+        </label>
+      </form>
+    </div>
+    <div class="delete-dialog" title="删除奖品">
+      <p>&emsp;&emsp;删除奖品后<strong>不可恢复</strong>，<br />&emsp;&emsp;请确认您的操作！！！<br />&emsp;&emsp;您要删除<strong></strong></p>
+    </div>
+    <img alt="篮球" class="help-text" src="img/basketball.png" ondblclick="basketOpen();">
+    <div class="probality-dialog" title="设置抽奖概率">
+      <form id="probality-form" method="post" onsubmit="resetProbality();return false;">
+        <input type="number" name="reward-probality" min="0" max="1" placeholder="请输入(0,1]之间至多三位小数">
+      </form>
+    </div>
+    <div class="resetprize-dialog" title="重置奖池">
+      <p>&emsp;您确定要重置所有奖品吗？<br/>&emsp;请谨慎操作！</p>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+	<!--phpCODE//htmlspecialchars($str);//替换HTML特殊字符为实体字符
+    //trim($str);//去除不必要的符号（空白、换行等）
+    //stripslashes($str);//删除倒斜线
+    //mysqli_real_escape_string($link, $escapestr);//替换SQL特殊字符
+    //mysql_num_rows( $result );//返回mysql查询结果的数目-->
+  </body>
+</html>

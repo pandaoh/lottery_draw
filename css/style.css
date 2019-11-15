@@ -1,0 +1,323 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+  background: whitesmoke;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 3em;
+}
+
+button{
+  cursor: pointer;
+}
+
+.hint-info{
+  position: fixed;
+  display: block;
+  margin: 0 auto;
+  top: 1%;
+  right: 1%;
+  background: #33a71d;
+  color: white;
+  font-size: larger;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 0.2em #89e0a0;
+  display: none;
+}
+
+h1{
+  width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bolder;
+  color: #62aeff;
+  cursor: default;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 800px;
+  margin: 5px auto;
+  background: #d7e2ed;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+header div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+header button{
+  margin: 3px 5px;
+  padding: 5px 8px;
+  text-align: center;
+  font-size: larger;
+  color: white;
+  background: #62aeff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+header button:focus,header button:hover{
+  box-shadow: 0 0 0 0.2rem #92c7ff;
+}
+
+.btn-warning{
+  color: #212529;
+  background-color: #ffc107;
+  border: none;
+}
+
+.btn-warning:focus,.btn-warning:hover{
+  box-shadow: 0 0 0 0.2rem #d8ad2d;
+}
+
+.prize-list{
+  width: 800px;
+  padding: 1px 5px;
+  margin: 0 auto;
+}
+
+.prize-list table{
+  border-collapse: collapse;
+  width: 800px;
+  margin: 1px auto;
+  text-align: center;
+  margin-bottom: 5em;
+}
+
+tr,th,td{
+  border: 1px solid #0099d4;
+  padding: 5px;
+  height: 2em;
+}
+
+/* 动态添加类样式开始 */
+.btn-visit{
+  box-shadow: 0 0 0 0.2rem #007dff !important;
+}
+
+.tr-focus{
+  background: rgba(0,0,0,0.3) !important;
+}
+
+.btn-focus{
+  box-shadow: 0 0 0 0.2rem #bdc5ff !important;
+}
+
+.form-warning{
+  box-shadow: 0 0 0 0.1rem #ec2f2f !important;
+}
+/* 动态添加类样式结束 */
+
+thead{
+  background: #c0d7ef;
+  cursor: default;
+}
+
+tbody tr:nth-child(even){
+  background: #d7e2ed;
+}
+
+tbody tr td:nth-child(1){
+  width: 50px;
+  cursor: crosshair;
+}
+
+tbody tr td:nth-child(2){
+  color: #731515;
+  font-weight: bolder;
+  width: 170px;
+  padding: 5px 10px;
+}
+
+tbody tr td:nth-child(3),tbody tr td:nth-child(4){
+  width: 150px;
+  cursor: default;
+}
+
+tbody tr td:nth-child(5),tbody tr td:nth-child(6){
+  width: 100px;
+}
+
+tbody tr:hover{
+  background: rgba(0,0,0,0.07);
+}
+
+.prize-num{
+  color: tomato;
+  font-size: large;
+  font-weight: bold;
+  cursor: crosshair;
+}
+
+.update-btn,.delete-btn{
+  text-align: center;
+  border: none;
+  width: 100px;
+  height: inherit;
+  color: white;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.update-btn{
+  background: #33a71d;
+}
+
+.update-btn:focus{
+  box-shadow: 0 0 0 0.2rem #89e0a0;
+}
+
+.delete-btn{
+  background: #c12f2f;
+}
+
+.delete-btn:focus{
+  box-shadow: 0 0 0 0.2rem #ffb1b8;
+}
+
+.add-dialog{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  text-align:center;
+  background-color:rgba(0,0,0,0.3);
+  z-index:999;
+  display: none;
+}
+
+.warp-dialog{
+  margin: 0 auto;
+  margin-top: 9rem;
+  width: 300px;
+  height: 210px;
+  background-color: snow;
+  border-radius: 10px;
+  box-shadow: 0 0 0.5em whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.warp-dialog p{
+  width: 290px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #d7e2ed;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: large;
+  font-weight: bold;
+  color: #777;
+  line-height: 30px;
+  cursor: default;
+}
+
+.warp-dialog p img{
+  height: 30px;
+  width: 30px;
+  border-radius: 90%;
+  outline: none;
+  cursor: pointer;
+}
+
+.warp-dialog p img:hover{
+  box-shadow: 0 0 0 0.1em #e29595;
+}
+
+.warp-dialog p img:active{
+  transform: scale(0.8);
+}
+
+.prize-add img{
+  height: 100px;
+  width: 100px;
+}
+
+.prize-add form input[type="text"]{
+  width: 250px;
+  height: 1.5em;
+  outline: none;
+}
+
+.prize-add form input[type="submit"]{
+  width: 6em;
+  padding: 5px;
+  margin: 8px auto;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: #62aeff;
+  border-radius: 5px;
+  color: white;
+  font-weight: bolder;
+}
+
+.prize-add form input[type="text"]:focus{
+  box-shadow: 0 0 0 0.1rem #62aeff;
+}
+
+.prize-add form input[type="submit"]:hover,.prize-add form input[type="submit"]:focus,.prize-add form input[type="submit"]:active{
+  box-shadow: 0 0 0 0.2rem #92c7ff;
+}
+
+.update-dialog,.delete-dialog,.probality-dialog,.resetprize-dialog{
+  display: none;
+}
+
+.delete-dialog strong{
+  color: red;
+}
+
+.resetprize-dialog p{
+  font-weight: bolder;
+  color: red;
+}
+
+.help-text{
+  width: 3vw;
+  height: 3vw;
+  position: fixed;
+  z-index: 99999;
+  left: -1.5vw;
+  top: 0;
+  transition-duration: 0.6s;
+  cursor: pointer;
+}
+
+.help-text:hover{
+  transform: rotate(360deg);
+  left: 0;
+  width: 5vw;
+  height: 5vw;
+}
+
+input[name="reward-probality"]{
+  width: 16em;
+}
